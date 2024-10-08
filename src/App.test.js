@@ -20,3 +20,24 @@ test("Testing input box", () => {
   expect(checkInput).toHaveAttribute("type", "text");
   expect(checkInput).toHaveAttribute("value", "Devesh Mishra");
 });
+
+describe("UI Test case group", () => {
+  test("Test case 1", () => {
+    render(<App />);
+
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+  test("Test case 2", () => {
+    render(<App />);
+
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("id", "username");
+  });
+  test("Test case 3", () => {
+    render(<App />);
+
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("type", "text");
+  });
+});
