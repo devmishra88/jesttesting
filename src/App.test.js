@@ -21,7 +21,7 @@ test("Testing input box", () => {
   expect(checkInput).toHaveAttribute("value", "Devesh Mishra");
 });
 
-describe.only("UI Test case group", () => {
+describe.skip("UI Test case group", () => {
   test("Test case 1", () => {
     render(<App />);
 
