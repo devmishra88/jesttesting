@@ -21,7 +21,7 @@ test("Testing input box", () => {
   expect(checkInput).toHaveAttribute("value", "Devesh Mishra");
 });
 
-describe.skip("UI Test case group", () => {
+describe("UI Test case group", () => {
   test("Test case 1", () => {
     render(<App />);
 
@@ -40,4 +40,16 @@ describe.skip("UI Test case group", () => {
     let checkInput = screen.getByRole("textbox");
     expect(checkInput).toHaveAttribute("type", "text");
   });
+
+  describe("Nested UI Test case group", () => {
+
+    test("Nested UI Test case 1", () => {
+      render(<App />);
+  
+      let checkInput = screen.getByRole("textbox");
+      expect(checkInput).toHaveAttribute("value", "Devesh Mishra");
+    });
+
+  });
+
 });
