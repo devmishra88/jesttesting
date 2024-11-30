@@ -1,19 +1,22 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import App from "./App";
-import Users from "./Users";
-import renderer from "react-test-renderer";
+import handleData2 from "./helper";
 
-// test("on click event testing", () => {
-//   render(<App />);
-//   let button = screen.getByRole("button");
+test("method testing case 1", () => {
+  render(<App />);
+  let button = screen.getByTestId("btn1");
 
-//   fireEvent.click(button)
+  fireEvent.click(button)
 
-//   expect(screen.getByText("I am updated title")).toBeInTheDocument();
-// });
+  expect(screen.getByText("hello")).toBeInTheDocument();
+});
 
-test("Class component method testing",()=>{
-  const componentData = renderer.create(<Users/>).getInstance();
-  // console.log(componentData);
-  expect(componentData.getUserList()).toMatch("user list")
-})
+test("method testing case 2", () => {
+  expect(handleData2()).toMatch("devesh");
+  // render(<App />);
+  // let button = screen.getByTestId("btn1");
+
+  // fireEvent.click(button)
+
+  // expect(screen.getByText("hello")).toBeInTheDocument();
+});
